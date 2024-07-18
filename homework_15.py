@@ -6,6 +6,14 @@ def sortList(list):
 
     print("Sorted List: ", list)
 
+def gap(list):
+
+    gapMax = 0
+    for i in range(1, len(list)):
+        gapMax = max(gapMax, list[i] - list[i - 1])
+
+    return gapMax
+
 
 def main():
     while True:
@@ -24,5 +32,10 @@ def main():
 
             else:
                 sortList(userList)
+                maxGap = gap(userList)
+
+                print(f"Maximum gap in given list is: {maxGap}")
 
                 break
+
+main()
